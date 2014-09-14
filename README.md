@@ -1,3 +1,3 @@
 HH_school
 =========
-Try-out tasks
+Try-out tasks written in Java
