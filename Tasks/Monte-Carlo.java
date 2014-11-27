@@ -21,11 +21,14 @@ import java.util.Iterator;
 
 public class HH_school_1
 {
-    public final static int NUM_INPUT_COORDS = 4;    // Number of coords corresponding to 2 points
-    public final static int INIT_NUM_POINTS = 99;   // Initial number of points on the coordinate axis (excluding zero)
-    public final static int ACC_MULT = 100;          // Points multiplier for higher accuracy of Monte Carlo method
+    /*Number of coords corresponding to 2 points*/
+    public final static int NUM_INPUT_COORDS = 4;    
+    /*Initial number of points on the coordinate axis (excluding zero)*/
+    public final static int INIT_NUM_POINTS = 99;
+    /*Points multiplier for higher accuracy of Monte Carlo method)*/
+    public final static int ACC_MULT = 100;          
 
-    public static class Rectangle                    // A class for creating rectangle objects storing bottom left top right points coords
+    public static class Rectangle                    
     {
         private int bottomLeftX;
         private int bottomLeftY;
