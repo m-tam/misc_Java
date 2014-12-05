@@ -37,53 +37,13 @@ public class HH_school_1
 
         public Rectangle(int bottomLeftX, int bottomLeftY, int topRightX, int topRightY)
         {
-            this.setBottomLeftX(bottomLeftX);
-            this.setBottomLeftY(bottomLeftY);
-            this.setTopRightX(topRightX);
-            this.setTopRightY(topRightY);
-
-        }
-
-        public int getBottomLeftX()
-        {
-            return this.bottomLeftX;
-        }
-
-        public void setBottomLeftX(int bottomLeftX)
-        {
             this.bottomLeftX = bottomLeftX;
-        }
-
-        public int getBottomLeftY()
-        {
-            return this.bottomLeftY;
-        }
-
-        public void setBottomLeftY(int bottomLeftY)
-        {
             this.bottomLeftY = bottomLeftY;
-        }
-
-        public int getTopRightX()
-        {
-            return this.topRightX;
-        }
-
-        public void setTopRightX(int topRightX)
-        {
             this.topRightX = topRightX;
-        }
-
-        public int getTopRightY()
-        {
-            return this.topRightY;
-        }
-
-        public void setTopRightY(int topRightY)
-        {
             this.topRightY = topRightY;
-        }
 
+        }
+        
         @Override
         public String toString()
         {
