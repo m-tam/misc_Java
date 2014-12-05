@@ -1,7 +1,6 @@
 /*
-2. Бесконечная последовательность
-Возьмём бесконечную цифровую последовательность, образованную склеиванием последовательных положительных чисел: S = 123456789101112131415...
-Определите первое вхождение заданной последовательности A в бесконечной последовательности S (нумерация начинается с 1).
+Возьмём цифровую последовательность, образованную склеиванием последовательных положительных чисел: S = 123456789101112131415...
+Определите первое вхождение заданной последовательности A в "бесконечной" последовательности S (нумерация начинается с 1).
 
 Пример входных данных:
 6789
@@ -16,19 +15,28 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 
-public class HH_school_2_v2 {                   // Variant 2
+public class Rabin-Karp_Extracting_Substring {                 
 
-    public final static int MOD_DIVISOR = 10;                   // Devisor value for Rabin-Karp method
+	/*Divisor value for Rabin-Karp method*/
+    public final static int MOD_DIVISOR = 10;                   
     
     public static int RabinKarp (String input)
     {
-        String sequence = "";                                   // A future sequence of concatenated successive positive integer numbers from 1 to 10000
-        String subSequence = "";                                // A subsequence extracted from the sequence to compare it with the input
-        int candidateIndex;                                     // A supposed sought-for index
+		/*A future sequence of concatenated successive positive integer numbers from 1 to 10000*/
+        String sequence = ""; 
+		
+		/*A subsequence extracted from the sequence to compare it with the input*/		
+        String subSequence = "";
+		
+		/*A supposed sought-for index*/	
+        int candidateIndex;                                     
         int output = 0;
-        int checker = Integer.parseInt(input)%MOD_DIVISOR;      // Remainder of dividing input sequence by a chosen divisor
-
-        for (int i = 1; i < 10000; i++)                         // Creating an infinite (not really) sequence of concatenated successive positive integer numbers from 1 to 10000
+		
+		/*Remainder of dividing input sequence by a chosen divisor*/
+        int checker = Integer.parseInt(input)%MOD_DIVISOR;      
+		
+		/*Creating an infinite (not really) sequence of concatenated successive positive integer numbers from 1 to 10000*/
+        for (int i = 1; i < 10000; i++)                        
         {
             sequence += Integer.toString(i);
         }
@@ -56,7 +64,7 @@ public class HH_school_2_v2 {                   // Variant 2
 
     public static void main(String[] args)
     {
-        String input = "";                      // A String for an input subsequence
+        String input = "";                      
         int output = 0;
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -65,7 +73,7 @@ public class HH_school_2_v2 {                   // Variant 2
         try
         {
             input = reader.readLine();
-            output = RabinKarp(input);          // Performing a Rabin-Karp method search of the index
+            output = RabinKarp(input);          
             if(output == 0)
             {
                 System.out.println("Please, try running the program again! You haven't provided any sensible input.");
@@ -80,7 +88,7 @@ public class HH_school_2_v2 {                   // Variant 2
         catch (Exception e)
         {
             System.out.println("Please, try running the program again! You haven't provided any sensible input.");
-            //e.printStackTrace();
+            
         }
     }
 }
