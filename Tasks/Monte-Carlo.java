@@ -55,20 +55,29 @@ public class HH_school_1
 
     public static double MonteCarlo (ArrayList<Rectangle> input)
 {
-    int numPoints = 0;                                                                          // Number of points hit the target area
-    int initPoints = (INIT_NUM_POINTS * ACC_MULT + 1) * (INIT_NUM_POINTS * ACC_MULT + 1);       // Number of points in the whole area
-    int initSquare = INIT_NUM_POINTS * INIT_NUM_POINTS;                                         // Square of the whole area
-    double finalSquare;                                                                         // Square of the target area
-    int matrix [][] = new int[INIT_NUM_POINTS * ACC_MULT + 1][INIT_NUM_POINTS * ACC_MULT + 1];  // Matrix of points in the whole area
-    int i, iStart, iMax, j, jStart, jMax;                                                       // Indices of matrix elements: x (i) coord varying from x1 (iStart) to x2 (iMax); y (j) coord varying from y1 (jStart) to y2 (jMax)
+	/*Number of points hit the target area*/
+    int numPoints = 0; 
+	
+	/*Total number of points in the area*/
+    int initPoints = (INIT_NUM_POINTS * ACC_MULT + 1) * (INIT_NUM_POINTS * ACC_MULT + 1);       
+    int initSquare = INIT_NUM_POINTS * INIT_NUM_POINTS;   
+	
+	/*Square of the target area*/
+    double finalSquare; 
+	
+    int matrix [][] = new int[INIT_NUM_POINTS * ACC_MULT + 1][INIT_NUM_POINTS * ACC_MULT + 1]; 
+
+	/*Indices of matrix (matrix of points) elements: x (i) coord varying from x1 (iStart) to x2 (iMax); y (j) coord varying from y1 (jStart) to y2 (jMax)*/	
+    int i, iStart, iMax, j, jStart, jMax;                                                       
 
     Iterator<Rectangle> r_iter = input.iterator();
 
     Rectangle rect;
-    while (r_iter.hasNext())                                                                    // A loop through all the rectangles inserted into the input list
+    while (r_iter.hasNext())                                                                    
     {
         rect = r_iter.next();
-        iStart = rect.getBottomLeftX() * ACC_MULT;                                              // Converting the coords into a new scale system for reaching higher accuracy of the method
+		/*Converting the coords into a new scale system for reaching higher accuracy of the method*/
+        iStart = rect.getBottomLeftX() * ACC_MULT;                                              
         i = iStart;
         iMax = rect.getTopRightX() * ACC_MULT;
         jStart = rect.getBottomLeftY() * ACC_MULT;
@@ -78,8 +87,8 @@ public class HH_school_1
         do {
 
             do {
-
-                matrix[i][j] = 1;                                                               // Setting the matrix element into 1 to indicate the point hit the target area
+				/*Setting the matrix element into 1 to indicate the point hit the target area*/
+                matrix[i][j] = 1;                                                                
                 j++;
 
             } while (j <= jMax);
@@ -96,11 +105,12 @@ public class HH_school_1
     {
         for (int l = 0; l < matrix[0].length; l++)
         {
-            numPoints += matrix[k][l];                                                          // Counting the number of points hit the target area
+			/*Counting the number of points hit the target area*/
+            numPoints += matrix[k][l];                                                          
         }
     }
-
-    finalSquare = initSquare * ((double)numPoints/(double)initPoints);                          // Estimating the square of the target area
+	/*Estimating the square of the target area*/
+    finalSquare = initSquare * ((double)numPoints/(double)initPoints);                          
 
     return finalSquare;
 }
@@ -108,8 +118,9 @@ public class HH_school_1
     public static void main(String[] args)
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<Rectangle> input = new ArrayList<Rectangle>();                                 // A list of rectangles
-        String tryInput = "";                                                                    // An input string containing coords
+        ArrayList<Rectangle> input = new ArrayList<Rectangle>();                                 
+        /*An input string containing coords*/
+		String tryInput = "";                                                                   
         String spaces = "[ ]+";
 
         System.out.println("Please, insert " + NUM_INPUT_COORDS + " integer numbers in {0, 1, ..., 99} range, " +
@@ -117,9 +128,10 @@ public class HH_school_1
                 "separating them by space (each rectangle coordinates on the new line).\n" +
                 "Press Enter 2 times after you have finished.");
         try {
-            while (true)                                                                           // Reading the input data and inserting it into a list of rectangles
+			/* Reading the input data and inserting it into a list of rectangles*/
+            while (true)                                                                           
             {
-
+	
                 tryInput = reader.readLine();
                 String[] tryInputArray = tryInput.split(spaces);
 
