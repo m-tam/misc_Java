@@ -1,5 +1,5 @@
 /*
-1. Пересекающиеся прямоугольники
+Пересекающиеся прямоугольники
 Дан набор прямоугольников, заданных двумерными координатами пары противоположных вершин (левой нижней и правой верхней).
 Прямоугольники могут пересекаться друг с другом.
 Найдите общую площадь, которую покрывают эти прямоугольники.
@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class HH_school_1
+public class Monte-Carlo
 {
     /*Number of coords corresponding to 2 points*/
     public final static int NUM_INPUT_COORDS = 4;    
