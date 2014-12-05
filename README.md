@@ -1,3 +1,3 @@
-HH_school
+Java 
 =========
-Try-out tasks written in Java
+Simple tasks written in Java
